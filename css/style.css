@@ -1,0 +1,569 @@
+/* Reset básico e importação de fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Usando as fontes do Google importadas no HTML */
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #4A4A4A; /* Um cinza um pouco mais suave */
+  background: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header { /* 'header' é uma tag, então o ponto não é necessário, mas funciona */
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Garante que o header fique sobre outros elementos */
+  height: 70px; /* Um pouco mais de espaço */
+  display: flex; /* Adicionado para centralizar o container verticalmente */
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil */
+}
+
+.ajuste-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Garante que o container ocupe todo o espaço do header */
+  flex-wrap: wrap; /* 'flex-grow' estava incorreto */
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: #2ECC71; /* Um verde mais vibrante e moderno */
+  text-decoration: none; /* Logos como link não devem ter sublinhado */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center; /* Alinha o botão de login com os links */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #27ae60; /* Um tom de verde mais escuro para o hover */
+}
+
+/* Estilo para o botão de Login */
+.btn-login {
+  padding: 8px 20px;
+  background-color: #2ECC71;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.btn-login:hover {
+  background-color: #27ae60;
+  color: white;
+}
+
+
+/* Hero */
+.hero {
+  /* Uma imagem de fundo aqui cairia muito bem! */
+  background: #e8f5e9; /* Um verde bem clarinho */
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #1b5e20; /* Verde escuro */
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px; /* Limita a largura para melhor leitura */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  background: #2ECC71;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #27ae60;
+}
+
+/* Features */
+.features {
+  padding: 60px 0;
+}
+
+.features .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  flex-basis: 300px; /* Define uma base de largura para cada card */
+  flex-grow: 1; /* Permite que os cards cresçam para preencher o espaço */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Efeito de "levantar" no hover */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+
+/* Content (Seção de Busca) */
+.content {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.search-section {
+  text-align: center;
+}
+
+.content h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+  color: #1b5e20;
+}
+
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 12px;
+  width: 60%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Footer */
+.footer {
+  background: #2c3e50; /* Um azul/cinza escuro */
+  color: #ecf0f1;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer a {
+  color: #2ECC71; /* Links com a cor principal */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}/* Reset básico e importação de fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Usando as fontes do Google importadas no HTML */
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #4A4A4A; /* Um cinza um pouco mais suave */
+  background: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header { /* 'header' é uma tag, então o ponto não é necessário, mas funciona */
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Garante que o header fique sobre outros elementos */
+  height: 70px; /* Um pouco mais de espaço */
+  display: flex; /* Adicionado para centralizar o container verticalmente */
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil */
+}
+
+.ajuste-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Garante que o container ocupe todo o espaço do header */
+  flex-wrap: wrap; /* 'flex-grow' estava incorreto */
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: #2ECC71; /* Um verde mais vibrante e moderno */
+  text-decoration: none; /* Logos como link não devem ter sublinhado */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center; /* Alinha o botão de login com os links */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #27ae60; /* Um tom de verde mais escuro para o hover */
+}
+
+/* Estilo para o botão de Login */
+.btn-login {
+  padding: 8px 20px;
+  background-color: #2ECC71;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.btn-login:hover {
+  background-color: #27ae60;
+  color: white;
+}
+
+
+/* Hero */
+.hero {
+  /* Uma imagem de fundo aqui cairia muito bem! */
+  background: #e8f5e9; /* Um verde bem clarinho */
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #1b5e20; /* Verde escuro */
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px; /* Limita a largura para melhor leitura */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  background: #2ECC71;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #27ae60;
+}
+
+/* Features */
+.features {
+  padding: 60px 0;
+}
+
+.features .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  flex-basis: 300px; /* Define uma base de largura para cada card */
+  flex-grow: 1; /* Permite que os cards cresçam para preencher o espaço */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Efeito de "levantar" no hover */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+
+/* Content (Seção de Busca) */
+.content {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.search-section {
+  text-align: center;
+}
+
+.content h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+  color: #1b5e20;
+}
+
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 12px;
+  width: 60%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Footer */
+.footer {
+  background: #2c3e50; /* Um azul/cinza escuro */
+  color: #ecf0f1;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer a {
+  color: #2ECC71; /* Links com a cor principal */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   ESTILOS DA PÁGINA INICIAL (baseado no Figma)
+   ========================================================================== */
+
+/* Hero Section (com imagem e texto lado a lado) */
+.hero-split {
+    background-color: #e8f5e9; /* Fundo verde claro */
+    padding: 60px 0;
+}
+
+.hero-split-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
+    gap: 40px;
+}
+
+.hero-text-content {
+    flex: 1; /* Ocupa o espaço disponível */
+    min-width: 300px; /* Largura mínima antes de quebrar a linha */
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1b5e20;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #374151;
+}
+
+.hero-image-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.hero-image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* Seção de Conteúdo com Imagem (padrão Figma) */
+.content-image-section {
+    padding: 60px 0;
+}
+
+.section-gray {
+    background-color: #f9f9f9;
+}
+
+.content-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Modificador para inverter a ordem dos elementos */
+.content-image-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.content-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.content-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #1b5e20;
+    margin-bottom: 20px;
+}
+
+.content-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.link-styled {
+    font-weight: bold;
+    color: #27ae60;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-styled:hover {
+    color: #1b5e20;
+}
+
+.content-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+
+/* Seção de Call to Action (CTA) */
+.cta-section {
+    background-color: #1b5e20; /* Fundo verde escuro */
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Reestilizando o .btn-primary para a seção CTA para dar contraste */
+.cta-section .btn-primary {
+    background-color: #fff;
+    color: #1b5e20;
+}
+.cta-section .btn-primary:hover {
+    background-color: #e8f5e9;
+}
+
+/* ==========================================================================
+   Ajustes de Responsividade
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-split-container, .content-image-container.reverse {
+        /* Garante que o texto venha sempre antes da imagem no mobile */
+        flex-direction: column;
+    }
+}
+

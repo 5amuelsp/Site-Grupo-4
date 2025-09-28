@@ -1,0 +1,97 @@
+/* css/style.css (adicionar ao final do arquivo) */
+
+/* ESTILOS DA PÁGINA DE LOGIN */
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    min-height: calc(100vh - 70px - 94px); /* Altura da tela menos header e footer */
+    background-color: #f9f9f9;
+}
+
+.login-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #1b5e20;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #27ae60;
+    text-decoration: none;
+}
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-container .btn-primary {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.signup-link {
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+.signup-link a {
+    color: #27ae60;
+    font-weight: 600;
+    text-decoration: none;
+}
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    min-height: 1.2em; /* Reserva espaço para a mensagem não "empurrar" o layout */
+}

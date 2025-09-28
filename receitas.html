@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossas Receitas - EcoCozinha</title>
+  <link rel="stylesheet" href="css/receitas.css">
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <div class="container ajuste-flex">
+    <a href="index.html" class="logo">🌿 EcoCozinha</a>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="receitas.html">Receitas</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="login.html" class="btn-login">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <section class="page-title">
+        <div class="container">
+            <h1>Nossas Receitas Sustentáveis</h1>
+            <p>Explore pratos deliciosos que fazem bem para você, para o seu bolso e para o planeta.</p>
+        </div>
+    </section>
+
+    <section class="busca-e-filtros">
+        <div class="container">
+            <input type="text" id="barra-pesquisa" placeholder="Busque pelo nome da receita...">
+            <div class="filtros">
+                <label><input type="checkbox" class="filtro" value="aproveitamento"> Aproveitamento Integral</label>
+                <label><input type="checkbox" class="filtro" value="baixo"> Custo Baixo</label>
+                <label><input type="checkbox" class="filtro" value="salgado"> Salgado</label>
+                <label><input type="checkbox" class="filtro" value="doce"> Doce</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="lista-receitas">
+        <div class="container" id="receitas-container">
+            </div>
+    </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 EcoCozinha. Todos os direitos reservados.</p>
+    <p>Siga-nos: <a href="#">Instagram</a> | <a href="#">Pinterest</a></p>
+  </div>
+</footer>
+
+<script src="js/receitas.js"></script>
+
+</body>
+</html>

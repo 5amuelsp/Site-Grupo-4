@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - EcoCozinha</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <div class="container ajuste-flex">
+    <a href="index.html" class="logo">🌿 EcoCozinha</a>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="receitas.html">Receitas</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="main-login">
+    <div class="login-container">
+        <h2>Acesse sua Conta</h2>
+        <form id="form-login">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Sua senha" required>
+            </div>
+            <p id="error-message" class="error-message"></p>
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember"> Lembrar de mim
+                </label>
+                <a href="#" class="forgot-password">Esqueci minha senha</a>
+            </div>
+            <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+        <div class="signup-link">
+            <p>Ainda não tem uma conta? <a href="#">Cadastre-se</a></p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 EcoCozinha. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>

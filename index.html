@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoCozinha - Receitas Econômicas e Sustentáveis</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/login.css">
-  <link rel="stylesheet" href="login.js">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -16,11 +14,11 @@
 <header class="header">
   <div class="container ajuste-flex">
     <a href="index.html" class="logo">🌿 EcoCozinha</a>
-    <nav class="nav">
+    <nav class="nav" id="nav-menu">
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="receitas.html">Receitas</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="index.html" class="nav-link">Início</a></li>
+        <li><a href="receitas.html" class="nav-link">Receitas</a></li>
+        <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
         <li><a href="login.html" class="btn-login">Login</a></li>
       </ul>
     </nav>
@@ -36,7 +34,7 @@
                 <a href="receitas.html" class="btn-primary">Explorar Receitas</a>
             </div>
             <div class="hero-image-content">
-                <img src="images/prato-sustentavel.png" alt="Prato de comida sustentável e apetitoso">
+                <img src="https://via.placeholder.com/500x400.png?text=Prato+Sustentável" alt="Prato de comida sustentável e apetitoso">
             </div>
         </div>
     </section>
@@ -66,7 +64,7 @@
                 <a href="sobre.html" class="link-styled">Conheça nossa missão</a>
             </div>
             <div class="content-image">
-                <img src="images/ingredientes-aproveitados.png" alt="Ingredientes sendo aproveitados integralmente">
+                <img src="https://via.placeholder.com/450x350.png?text=Aproveitamento+de+Alimentos" alt="Ingredientes sendo aproveitados integralmente">
             </div>
         </div>
     </section>
@@ -93,15 +91,51 @@
     </section>
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 EcoCozinha. Todos os direitos reservados.</p>
-    <p>Siga-nos: <a href="#">Instagram</a> | <a href="#">Pinterest</a></p>
+<footer class="site-footer">
+  <div class="container footer-container">
+
+    <div class="footer-column">
+      <h4 class="footer-title">🌿 EcoCozinha</h4>
+      <p class="muted">Receitas inteligentes para seu bolso e para o planeta. Cozinhe sem desperdício e com muito sabor.</p>
+    </div>
+
+    <div class="footer-column">
+      <h4 class="footer-title">Navegação</h4>
+      <ul class="footer-links">
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="receitas.html">Todas as Receitas</a></li>
+        <li><a href="login.html">Login / Cadastro</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4 class="footer-title">Siga-nos</h4>
+      <p class="muted">Acompanhe dicas, vídeos e receitas novas todos os dias.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+          <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"></path></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+          <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.902 4.902 0 011.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122s-.013 3.056-.06 4.122c-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772 4.915 4.915 0 01-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06s-3.056-.013-4.122-.06c-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12s.013-3.056.06-4.122c.05-1.065.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.902 4.902 0 015.45 3.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm6.5-3a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path></svg>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
+          <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2025 EcoCozinha. Todos os direitos reservados.</p>
+      <p class="small-note">Desenvolvido como projeto de estudo.</p>
+    </div>
   </div>
 </footer>
 
+<script src="js/main.js"></script>
+
 </body>
 </html>
-
-
-

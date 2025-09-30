@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nós - EcoCozinha</title>
+  <title>Compras - EcoCozinha</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,49 +19,21 @@
         <li><a href="index.html" class="nav-link">Início</a></li>
         <li><a href="receitas.html" class="nav-link">Receitas</a></li>
         <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
-        <li><a href="compras.html" class="nav-link">Compras</a></li>
-        <li><a href="login.html" class="btn-login">Login</a></li>
+        <li><a href="compras.html" class="nav-link">Compras</a></li> <li><a href="login.html" class="btn-login">Login</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main>
-    <section class="page-title">
-        <div class="container">
-            <h1>Nossa Missão: Cozinha com Propósito</h1>
-        </div>
+    <section class="hero-card">
+      <h2>Conheça a nossa loja</h2>
+      <p>Produtos que te ajudam a cozinhar de forma mais sustentável e econômica.</p>
     </section>
 
-    <section class="sobre-conteudo">
-        <div class="container">
-            <div class="about-section">
-                <img src="https://via.placeholder.com/800x400.png?text=Nossa+Equipe" alt="Nossa Equipe" class="sobre-imagem">
-                <h2>Quem Somos</h2>
-                <p>A EcoCozinha nasceu de um desejo simples: mostrar que é possível cozinhar pratos incríveis, economizar dinheiro e cuidar do planeta, tudo ao mesmo tempo. Acreditamos que o desperdício de alimentos é um dos maiores desafios da nossa geração, e a mudança começa na cozinha de cada um.</p>
-                <p>Nossa plataforma reúne receitas criativas que dão um novo propósito a ingredientes que muitas vezes são descartados. De talos e cascas a sementes, tudo pode se transformar em uma refeição deliciosa e nutritiva.</p>
-            </div>
-            
-            <div class="contact-section">
-                <h2>Entre em Contato</h2>
-                <p>Tem alguma dúvida, sugestão de receita ou proposta de parceria? Adoraríamos ouvir você! Preencha o formulário abaixo ou envie um e-mail para <strong>contato@ecocozinha.com</strong>.</p>
-                <form class="form-contato">
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
-                </form>
-            </div>
-        </div>
+    <section class="lista-receitas" style="padding-top: 20px;">
+      <div id="shopGrid" class="container">
+          </div>
     </section>
 </main>
 
@@ -110,6 +82,7 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/compras.js"></script>
 
 </body>
 </html>

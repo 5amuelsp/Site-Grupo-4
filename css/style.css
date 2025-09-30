@@ -22,27 +22,56 @@ body {
 }
 
 /* ==========================================================================
-   HEADER MELHORADO
+   COMPONENTES GERAIS (Botões, Links, etc.)
+   ========================================================================== */
+.btn-primary {
+  padding: 12px 24px;
+  background: #2ECC71;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #27ae60;
+}
+
+.link-styled {
+    font-weight: bold;
+    color: #27ae60;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-styled:hover {
+    color: #1b5e20;
+}
+
+
+/* ==========================================================================
+   HEADER (MENU DE NAVEGAÇÃO)
    ========================================================================== */
 .header {
   background-color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 80px; /* Aumentamos um pouco a altura inicial */
+  height: 80px;
   display: flex;
   align-items: center;
-  /* Transição suave para a mudança de altura e fundo */
   transition: height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
-/* NOVO: Estilo do header quando a página é rolada */
+/* Estilo do header quando a página é rolada (adicionado via JS) */
 .header.scrolled {
-  height: 70px; /* Altura menor ao rolar */
-  background-color: rgba(255, 255, 255, 0.95); /* Fundo branco com leve transparência */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.10); /* Sombra mais pronunciada */
-  /* Efeito de "vidro fosco" para navegadores que suportam */
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
@@ -64,7 +93,7 @@ body {
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 30px; /* Aumentamos o espaçamento */
+  gap: 30px;
   align-items: center;
 }
 
@@ -72,19 +101,11 @@ body {
   text-decoration: none;
   color: #333;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative; /* Posição relativa para o pseudo-elemento ::after */
-  padding-bottom: 5px; /* Espaço para a linha de hover */
+  position: relative;
+  padding-bottom: 5px;
 }
 
-/* Remove a linha de baixo para o botão de login */
-.nav a.btn-login::after {
-    display: none;
-}
-
-/* Linha sutil que aparece embaixo do link ao passar o mouse */
+/* Efeito de linha nos links do menu */
 .nav a.nav-link::after {
   content: '';
   position: absolute;
@@ -93,84 +114,49 @@ body {
   width: 100%;
   height: 2px;
   background-color: #2ECC71;
-  transform: scaleX(0); /* Começa com largura 0 */
+  transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
 }
 
-.nav a.nav-link:hover::after,
-.nav a.nav-link.active-link::after {
-  transform: scaleX(1); /* Anima a largura para 100% no hover e no link ativo */
+.nav a.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
-/* NOVO: Estilo para o link da página ativa */
-.nav a.nav-link.active-link {
-  color: #27ae60; /* Cor mais forte para o link ativo */
+.btn-login {
+    padding: 8px 20px;
+    background: #2ECC71;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn-login:hover {
+    background: #27ae60;
 }
 
 
 /* ==========================================================================
-   AJUSTE DE NAVEGAÇÃO PARA TELAS MENORES
-   ========================================================================== */
-@media (max-width: 768px) {
-    .ajuste-flex {
-        /* Permite que o logo e a navegação fiquem em linhas separadas se não couberem */
-        flex-wrap: wrap;
-        justify-content: center; /* Centraliza os itens quando quebram a linha */
-        gap: 15px;
-    }
-
-    .nav ul {
-        /* Permite que os próprios links do menu quebrem a linha */
-        flex-wrap: wrap;
-        justify-content: center; /* Centraliza os links */
-    }
-
-    .header {
-        /* Permite que a altura do header se ajuste ao conteúdo que quebrou a linha */
-        height: auto;
-        padding: 15px 0;
-    }
-}
-
-/* ==========================================================================
-   COMPONENTES E SEÇÕES GERAIS
-   ========================================================================== */
-.btn-primary {
-  padding: 12px 24px;
-  background: #2ECC71;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #27ae60;
-}
-
-/* ==========================================================================
-   ESTILOS DO FOOTER
+   FOOTER (RODAPÉ)
    ========================================================================== */
 .site-footer {
-    background-color: #2c3e50; /* Um azul/cinza escuro, mais moderno */
-    color: #bdc3c7; /* Cinza claro para o texto */
+    background-color: #2c3e50;
+    color: #bdc3c7;
     padding-top: 40px;
     font-size: 0.9rem;
 }
 
 .footer-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px; /* Espaçamento entre as colunas */
+    gap: 30px;
     padding-bottom: 40px;
 }
 
 .footer-column {
-    flex: 1; /* Faz as colunas dividirem o espaço */
-    min-width: 220px; /* Largura mínima antes de quebrar a linha */
+    flex: 1;
+    min-width: 220px;
 }
 
 .footer-title {
@@ -180,14 +166,8 @@ body {
     margin-bottom: 15px;
 }
 
-.footer-column p {
-    line-height: 1.7;
-}
-
 .footer-links {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .footer-links li {
@@ -201,44 +181,31 @@ body {
 }
 
 .footer-links a:hover {
-    color: #2ECC71; /* Cor de destaque do site */
+    color: #2ECC71;
 }
 
 .social-icons {
     display: flex;
-    gap: 15px; /* Espaçamento entre os ícones */
+    gap: 15px;
     margin-top: 15px;
-}
-
-.social-link {
-    display: inline-block;
 }
 
 .social-icon {
     width: 24px;
     height: 24px;
-    fill: #bdc3c7; /* Cor padrão do ícone SVG */
+    fill: #bdc3c7;
     transition: fill 0.3s ease, transform 0.3s ease;
 }
 
 .social-link:hover .social-icon {
-    fill: #2ECC71; /* Muda a cor do ícone no hover */
-    transform: scale(1.1); /* Efeito de zoom sutil */
+    fill: #2ECC71;
+    transform: scale(1.1);
 }
 
 .footer-bottom {
-    background-color: #232f3e; /* Tom um pouco mais escuro para a base */
+    background-color: #232f3e;
     padding: 20px 0;
     text-align: center;
-}
-
-.footer-bottom p {
-    margin: 5px 0;
-}
-
-.footer-bottom .small-note {
-    font-size: 0.8rem;
-    opacity: 0.7;
 }
 
 /* ==========================================================================
@@ -257,7 +224,7 @@ body {
     gap: 40px;
 }
 
-.hero-text-content {
+.hero-text-content, .hero-image-content {
     flex: 1;
     min-width: 300px;
 }
@@ -273,13 +240,6 @@ body {
 .hero-text {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #374151;
-}
-
-.hero-image-content {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
 }
 
 .hero-image-content img {
@@ -288,15 +248,12 @@ body {
     border-radius: 8px;
 }
 
-.features {
-  padding: 60px 0;
-}
-
 .features .container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 60px 20px;
 }
 
 .feature-card {
@@ -315,12 +272,6 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.feature-card h3 {
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 15px;
-  color: #333;
-}
-
 .content-image-section {
     padding: 60px 0;
 }
@@ -332,8 +283,6 @@ body {
 .content-image-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 40px;
 }
 
@@ -341,7 +290,7 @@ body {
     flex-direction: row-reverse;
 }
 
-.content-text {
+.content-text, .content-image {
     flex: 1;
     min-width: 300px;
 }
@@ -351,29 +300,6 @@ body {
     font-size: 2rem;
     color: #1b5e20;
     margin-bottom: 20px;
-}
-
-.content-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.link-styled {
-    font-weight: bold;
-    color: #27ae60;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.link-styled:hover {
-    color: #1b5e20;
-}
-
-.content-image {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
 }
 
 .content-image img {
@@ -388,31 +314,10 @@ body {
     text-align: center;
 }
 
-.cta-section h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-}
-
-.cta-section p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.cta-section .btn-primary {
-    background-color: #fff;
-    color: #1b5e20;
-}
-.cta-section .btn-primary:hover {
-    background-color: #e8f5e9;
-}
-
 /* ==========================================================================
-   ESTILOS DA PÁGINA DE RECEITAS (receitas.html)
+   ESTILOS DAS PÁGINAS DE CONTEÚDO (Geral)
    ========================================================================== */
 .page-title {
-    margin-top: 40px;
     background-color: #f0fdf4;
     padding: 40px 0;
     text-align: center;
@@ -425,273 +330,9 @@ body {
     margin-bottom: 10px;
 }
 
-.busca-e-filtros {
-    padding: 30px 0;
-    background-color: #fff;
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-#barra-pesquisa {
-    width: 80%;
-    max-width: 600px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-}
-
-.filtros {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.filtros label {
-    cursor: pointer;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.lista-receitas {
-    padding: 40px 0;
-}
-
-#receitas-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.card-receita {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-receita:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.card-receita img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-receita-info {
-    padding: 15px;
-    flex-grow: 1;
-}
-
-.card-receita-info h3 {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.tags .tag {
-    display: inline-block;
-    background-color: #e8f5e9;
-    color: #1b5e20;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-top: 5px;
-    margin-right: 5px;
-}
-
-.nenhuma-receita {
-    font-size: 1.2rem;
-    color: #888;
-    text-align: center;
-    padding: 40px;
-    grid-column: 1 / -1;
-}
-
 /* ==========================================================================
-   ESTILOS DA PÁGINA SOBRE NÓS (sobre.html)
+   ESTILOS DA PÁGINA DE RECEITAS (receitas.html)
    ========================================================================== */
-.sobre-conteudo {
-    padding: 60px 0;
-    background-color: #fff;
-}
-
-.sobre-conteudo .container {
-    max-width: 800px;
-}
-
-.sobre-imagem {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.sobre-conteudo h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: #1b5e20;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-.sobre-conteudo p {
-    margin-bottom: 15px;
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
-
-.form-contato {
-    margin-top: 40px;
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.form-group input,
-.form-contato textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-group input:focus,
-.form-contato textarea:focus {
-    outline: none;
-    border-color: #27ae60;
-    box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
-}
-
-.form-contato button {
-    width: auto;
-    cursor: pointer;
-    border: none;
-}
-
-/* ==========================================================================
-   ESTILOS DA PÁGINA DE LOGIN (login.html)
-   ========================================================================== */
-.main-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 0;
-    min-height: calc(100vh - 70px - 94px);
-    background-color: #f9f9f9;
-}
-
-.login-container {
-    background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.login-container h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: #1b5e20;
-    margin-bottom: 30px;
-}
-
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.forgot-password {
-    color: #27ae60;
-    text-decoration: none;
-}
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-.login-container .btn-primary {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-.signup-link {
-    margin-top: 30px;
-    font-size: 0.9rem;
-}
-
-.signup-link a {
-    color: #27ae60;
-    font-weight: 600;
-    text-decoration: none;
-}
-.signup-link a:hover {
-    text-decoration: underline;
-}
-
-.error-message {
-    color: #e74c3c;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    min-height: 1.2em;
-}
-
-/* ==========================================================================
-   AJUSTES FINAIS DE RESPONSIVIDADE
-   ========================================================================== */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    .hero-split-container, .content-image-container.reverse, .content-image-container {
-        flex-direction: column;
-    }
-}
-
-/* ==========================================================================
-   ESTILOS PARA O NOVO SISTEMA DE RECEITAS E MODAL
-   ========================================================================== */
-
-/* Ajustes na seção de busca e filtros */
 .controls {
     margin-top: 30px;
 }
@@ -729,18 +370,55 @@ body {
     border-color: #27ae60;
 }
 
-/* Ajustes nos Cards de Receita */
-.card-receita {
+.lista-receitas {
+    padding: 40px 0;
+}
+
+#recipesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
-.card-desc {
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card .content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .k { /* Título do card */
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+.card .desc {
     font-size: 0.9rem;
-    margin: 10px 0;
-    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+    flex-grow: 1;
+    margin-bottom: 15px;
 }
-.card-meta {
+.card .meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -748,6 +426,7 @@ body {
     color: #555;
     margin-bottom: 15px;
 }
+
 .badge-impact {
     background-color: #e8f5e9;
     color: #1b5e20;
@@ -755,19 +434,30 @@ body {
     border-radius: 10px;
     font-weight: 600;
 }
+
 .card-footer {
     border-top: 1px solid #f0f0f0;
     padding-top: 15px;
-    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.card-footer .btn-primary {
-    width: 100%;
+
+.tag-list {
+    font-size: 0.8rem;
+    color: #777;
+    text-transform: capitalize;
+}
+
+.no-results {
+    font-size: 1.2rem;
+    color: #888;
     text-align: center;
-    border: none;
+    padding: 40px;
+    grid-column: 1 / -1;
 }
 
-
-/* ESTILOS DO MODAL */
+/* --- ESTILOS DO MODAL (POPUP DA RECEITA) --- */
 .modal {
     position: fixed;
     top: 0;
@@ -781,11 +471,12 @@ body {
     z-index: 2000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
 }
 .modal.show {
     opacity: 1;
     visibility: visible;
+    transition: opacity 0.3s ease;
 }
 .modal-card {
     background: #fff;
@@ -793,7 +484,6 @@ body {
     max-width: 800px;
     max-height: 90vh;
     border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     transform: scale(0.95);
@@ -829,7 +519,7 @@ body {
 }
 .modal-content {
     padding: 20px;
-    overflow-y: auto; /* Adiciona scroll se o conteúdo for grande */
+    overflow-y: auto;
 }
 .modal-image {
     width: 100%;
@@ -838,17 +528,11 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
 }
-.modal-main {
-    margin-bottom: 20px;
-}
-.modal-desc {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
 .pills-row {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    margin-top: 15px;
 }
 .pill {
     background-color: #f0f0f0;
@@ -857,7 +541,7 @@ body {
     font-size: 0.9rem;
 }
 .modal-section {
-    margin-bottom: 20px;
+    margin-top: 20px;
     border-top: 1px solid #eee;
     padding-top: 20px;
 }
@@ -866,5 +550,244 @@ body {
 }
 .modal-list li {
     margin-bottom: 10px;
-    line-height: 1.6;
+}
+
+/* ==========================================================================
+   ESTILOS DA PÁGINA SOBRE NÓS (sobre.html)
+   ========================================================================== */
+.sobre-conteudo .container {
+    max-width: 800px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.sobre-imagem {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.sobre-conteudo h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #1b5e20;
+    margin-bottom: 15px;
+}
+
+.form-contato {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.form-group input, .form-contato textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   ESTILOS DA PÁGINA DE LOGIN (login.html)
+   ========================================================================== */
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    min-height: calc(100vh - 154px); /* Viewport - header - footer */
+}
+
+.login-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #1b5e20;
+    margin-bottom: 30px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.forgot-password, .signup-link a {
+    color: #27ae60;
+    text-decoration: none;
+}
+.forgot-password:hover, .signup-link a:hover {
+    text-decoration: underline;
+}
+
+.signup-link {
+    margin-top: 30px;
+}
+
+.error-message {
+    color: #e74c3c;
+    min-height: 1.2em; /* Evita que o layout "pule" */
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================================================
+   AJUSTES DE RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .ajuste-flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .header {
+        height: auto;
+        padding: 15px 0;
+    }
+    .hero-split-container, .content-image-container, .content-image-container.reverse {
+        flex-direction: column;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS DA PÁGINA DE COMPRAS (compras.html)
+   ========================================================================== */
+
+.hero-card {
+    background-color: #e8f5e9; /* Mesmo verde claro do hero da home */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.hero-card h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   ESTILOS DA PÁGINA DE CADASTRO (criar-conta.html)
+   ========================================================================== */
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.field .error-message {
+  color: #d32f2f;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  display: block;
+}
+
+.avatar-wrapper {
+  margin-top: 12px;
+  display: none; /* Começa escondido */
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar-wrapper img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #eee;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+.form-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.form-status {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 20px;
+  min-height: 1.5em;
+}
+.form-status.success { color: #27ae60; }
+.form-status.error { color: #d32f2f; }
+
+.cta-benefits {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.benefit-item {
+  text-align: center;
+  max-width: 200px;
+}
+.benefit-icon {
+  font-size: 2.5rem;
+}
+.benefit-item strong {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+  color: #fff;
 }

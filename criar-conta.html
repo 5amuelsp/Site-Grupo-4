@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoCozinha — Crie sua Conta</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <div class="container ajuste-flex">
+    <a href="index.html" class="logo">🌿 EcoCozinha</a>
+    <nav class="nav" id="nav-menu">
+      <ul>
+        <li><a href="index.html" class="nav-link">Início</a></li>
+        <li><a href="receitas.html" class="nav-link">Receitas</a></li>
+        <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+        <li><a href="compras.html" class="nav-link">Compras</a></li>
+        <li><a href="login.html" class="btn-login">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding-top: 40px; padding-bottom: 60px; max-width: 700px;">
+    <h1 style="text-align: center; font-family: 'Montserrat', sans-serif; color: #1b5e20;">Crie sua Conta</h1>
+
+    <form id="signupForm" novalidate>
+      <div class="field">
+        <label for="fullName">Nome completo</label>
+        <input id="fullName" name="fullName" type="text" required>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Senha (mínimo 8 caracteres)</label>
+        <input id="password" type="password" required>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirme a senha</label>
+        <input id="confirmPassword" type="password" required>
+      </div>
+
+      <div class="field">
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado" required>
+          <option value="">Selecione...</option>
+          <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option>
+          <option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option>
+          <option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+          <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option>
+          <option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option>
+          <option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+          <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="file">Foto de perfil (opcional)</label>
+        <input id="file" type="file" accept="image/*">
+        
+        <div id="avatarPreviewWrap" class="avatar-wrapper">
+          <img id="avatarPreview" src="" alt="Preview da foto">
+          <button type="button" id="removeAvatar" class="btn-secondary">Remover foto</button>
+        </div>
+      </div>
+      
+      <div class="field">
+        <label><input id="newsletter" type="checkbox"> Quero receber novidades da EcoCozinha</label>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn-primary">Criar conta</button>
+        <button type="button" id="resetBtn" class="btn-secondary">Limpar</button>
+      </div>
+    </form>
+    
+    <div id="status" class="form-status"></div>
+
+    <p style="text-align: center; margin-top: 30px;">
+        Já tem uma conta? <a href="login.html" class="link-styled">Faça login</a>
+    </p>
+</main>
+
+<footer class="site-footer">
+    </footer>
+
+<script src="js/main.js"></script>
+<script src="js/criar-conta.js"></script>
+
+</body>
+</html>
